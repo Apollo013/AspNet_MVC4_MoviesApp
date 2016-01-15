@@ -1,0 +1,7 @@
+﻿enable-migrations -ContextTypeName:MvcMovies.Contexts.MovieDBContext -MigrationsDirectory:Migrations_MovieDBContext
+add-migration -configuration MvcMovies.Migrations_MovieDBContext.Configuration InitialCreate
+update-database -configuration MvcMovies.Migrations_MovieDBContext.Configuration
+
+enable-migrations -ContextTypeName:MvcMovies.Models.ApplicationDbContext -MigrationsDirectory:Migrations_ApplicationDbContext
+add-migration -configuration MvcMovies.Migrations_ApplicationDbContext.Configuration InitialCreate
+update-database -configuration MvcMovies.Migrations_ApplicationDbContext.Configuration

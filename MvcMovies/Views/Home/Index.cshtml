@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+
+    <div class="banner"></div>
+
+    <div class="content-wrapper">
+        <!--
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+        -->
+        <div id="genres_menu">
+            @{Html.RenderAction("GenreMenu", "Movies");}
+        </div>
+        <div id="actors_menu">
+            @{Html.RenderAction("ActorMenu", "Movies");}
+        </div>
+    </div>
+
+}
+
+

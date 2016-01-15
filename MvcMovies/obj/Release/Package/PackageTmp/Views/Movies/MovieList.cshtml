@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MvcMovies.Models.Movie>
+
+<div style="clear:both;"></div>
+
+@foreach (MvcMovies.Models.Movie item in Model)
+{
+    @Html.Partial("~/Views/Movies/ItemTemplates/MovieItem.cshtml",item)      
+}
+
+<div style="clear:both;"></div>

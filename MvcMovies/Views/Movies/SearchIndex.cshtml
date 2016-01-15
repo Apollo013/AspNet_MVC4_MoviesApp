@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MvcMovies.Models.Movie>
+
+@{
+    ViewBag.Title = "SearchIndex";
+}
+
+<div class="header_container" >
+    <img src='../Images/Search Banner.jpg' alt="genre banner" />
+
+    <h2>Movie Search</h2>
+
+    <div class="sub_header float-left interactive_menu_link" style="width:100%;">
+        @using (Html.BeginForm("SearchIndex","Movies",FormMethod.Get)){  
+            <div class="form_container">
+                <span class="float-left"><label class="form_label">Genre: </label>@Html.DropDownList("movieGenre", "All")</span>
+                
+                <span class="float-left"><label class="form_label">Title: </label>@Html.TextBox("SearchString")</span>
+                 
+                <span class="float-right"><input type="submit" value="Search" class="action_button float-left" /></span>
+            </div>
+        }
+    </div>
+    <div style="clear:both;"></div>
+    <div class="sub_header float-right">
+        <h1>
+            @Html.ActionLink("Create A New Movie", "Create", "Movies",  htmlAttributes: new { @class="action_button float-right" , @Style="width: 200px; display:inline;"})
+        </h1>
+    </div>   
+
+</div>
+
+@Html.Partial("MovieList")
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/globalize/globalize.js"></script>
+    <script src="~/Scripts/globalize/cultures/globalize.culture.fr-FR.js"></script>
+    <script>
+        $(document).ready(function () {
+            Globalize.culture("fr-FR");
+           // alert(Globalize.culture().name);
+        });
+    </script>
+  }

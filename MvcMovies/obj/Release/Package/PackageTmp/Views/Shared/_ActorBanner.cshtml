@@ -1,0 +1,7 @@
+﻿@{
+    Random rnd = new Random();
+    int num = rnd.Next(1, 4);
+    string imagename = "../Images/Actor Banner " + num + ".jpg";
+}
+
+<img src='@imagename' alt="@imagename" />

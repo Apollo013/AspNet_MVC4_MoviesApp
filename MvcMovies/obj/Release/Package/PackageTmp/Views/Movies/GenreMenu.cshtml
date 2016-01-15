@@ -1,0 +1,15 @@
+﻿@model List<string>
+
+<div style="clear:both; height:1px;"></div>
+<h2 class="float-left">Choose Your Favourite Genre</h2>
+<div style="clear:both; height:10px;"></div>
+<div class="horizontal_menu">
+
+    @foreach (string link in Model)
+    {
+
+        @Html.Partial("~/Views/Movies/ItemTemplates/GenreItem.cshtml",link)        
+        
+    }
+
+</div>

@@ -1,0 +1,18 @@
+﻿@model string
+
+@{
+    var imagename = "../Images/" + Model.ToString() + ".jpg";
+    <a href="@Url.RouteUrl("Default", new { action = "SearchGenre", controller = "Movies", movieGenre = @Model.ToString() })" class="genre_link interactive_menu_link">
+        <span>@Model.ToString()</span>
+        <img src='@imagename' alt="" /> 
+    </a>   
+    
+    
+/*
+        var imagename = "../Images/" + @link + ".jpg";
+        <a href="@Url.RouteUrl("Default", new { action = "SearchGenre", controller = "Movies", movieGenre = link })" class="genre_link interactive_menu_link">
+            <span>@link</span>
+            <img src='@imagename' alt="" /> 
+        </a>
+ */
+}

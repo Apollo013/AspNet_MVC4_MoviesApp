@@ -1,0 +1,13 @@
+﻿@{string imagename = @ViewBag.SelectedGenre;}
+@{if( !imagename.IsEmpty()){        
+        imagename = "../Images/" + @ViewBag.SelectedGenre + " Banner.jpg";
+    } else {
+        imagename = "../Images/Action Banner.jpg";
+    }
+ }
+<img src='@imagename' alt="genre banner" />
+
+
+
+
+

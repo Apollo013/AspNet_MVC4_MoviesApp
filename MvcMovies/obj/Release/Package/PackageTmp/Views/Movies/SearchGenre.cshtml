@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MvcMovies.Models.Movie>
+
+@{
+    ViewBag.Title = "Genre Search";
+}
+
+<div class="header_container" >
+
+    @Html.Partial("../Shared/_GenreBanner")
+    
+    <div class="sub_header float-left">
+        <h1>
+            @ViewBag.SelectedGenre
+        </h1>
+    </div>
+
+    <div class="sub_header float-right">
+        <h1>
+            @Html.ActionLink("Create A New Movie", "Create", "Movies",  htmlAttributes: new { @class="action_button float-right" , @Style="width: 200px; display:inline;"})
+        </h1>
+    </div>   
+    
+    <div style="clear:both;"></div>
+
+</div>
+
+
+@Html.Partial("MovieList")
+
+
+@{Html.RenderAction( "GenreMenu","Movies");}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/globalize/globalize.js"></script>
+    <script src="~/Scripts/globalize/cultures/globalize.culture.fr-FR.js"></script>
+    <script>
+        $(document).ready(function () {
+            Globalize.culture("fr-FR");
+           // alert(Globalize.culture().name);
+        });
+    </script>
+  }

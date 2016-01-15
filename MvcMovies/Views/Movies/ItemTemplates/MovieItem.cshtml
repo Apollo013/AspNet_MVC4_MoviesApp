@@ -1,0 +1,23 @@
+﻿@model MvcMovies.Models.Movie
+
+@{
+    
+    string imagename = "../Images/" + @Model.Title.Trim() + ".jpg";
+    
+    <div class="movie_item" >
+
+        <a href="@Url.RouteUrl("Default", new { action = "Details", controller = "Movies", id = @Model.MovieId })" class="interactive_menu_link movie_item_link">
+            <img src='@imagename' alt="@imagename" /> 
+            <span>@Model.Title</span>
+            <span>Price: @Html.DisplayFor(modelItem => @Model.Price)</span>
+            <span>Release Date: @Html.DisplayFor(modelItem => @Model.ReleaseDate)</span>
+            <span>Rated: @Html.DisplayFor(modelItem => @Model.Rating)</span> 
+        </a>   
+
+        @Html.ActionLink("Delete", "Delete", "Movies",new { id=@Model.MovieId },  htmlAttributes: new { @class="action_button float-right" , @Style="display:inline;"})
+        @Html.ActionLink("Edit", "Edit", "Movies",new { id=@Model.MovieId },  htmlAttributes: new { @class="action_button float-right" })
+
+    </div>  
+        
+}
+

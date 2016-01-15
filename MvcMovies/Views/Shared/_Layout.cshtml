@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Movie App</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style4.css" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/themes/base")
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+
+        <div class="content-wrapper">
+
+            <div id="spinningHolder" style="display:inline;" class="float-left;">
+                <a href="/" id="spinningLogo"></a>
+                <div id="spinner"> </div>
+            </div>
+
+            <div>
+                <!--<p class="site-title" style="padding-left:100px;">@Html.ActionLink("The Movie Mill", "Index", "Home")</p>-->
+                <div class="site-title titlebar">
+                    <img src="~/Images/sitetitle.png" class="float-left;" style="margin-left:80px;" />
+
+                    <section id="login" class="float-right">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="" style="width: 1040px; margin-left:auto; margin-right:auto; margin-bottom:20px;">
+
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Movies", "SearchIndex", "Movies")</li>
+                        <li>@Html.ActionLink("Actors", "SearchActorMovies", "Movies")</li>
+                        <li>@Html.ActionLink("Genres", "SearchGenre", "Movies")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section id="section" class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left copyright">
+                <p>&copy; @DateTime.Now.Year - Mighty Millar Corporation</p>
+
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
