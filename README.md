@@ -1,6 +1,6 @@
 # AspNet_MVC4_Movies
 
-A C# / MVC project demonstrating Codefirst, Linq to Entity, View Templates &amp; more. This app uses MSSQL for data storage &amp; is hosted on Azure
+A C# / MVC4 college project  
 
 ---
 
